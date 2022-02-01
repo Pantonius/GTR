@@ -1,0 +1,179 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+
+  background-color: #212121;
+}
+
+canvas:hover {
+  cursor: grab;
+}
+
+canvas:hover.dragging {
+  cursor: grabbing;
+}
+
+input[type='text'] {
+  /* TODO */
+  background-color: #0000009f;
+  border: none;
+  border-radius: 4px;
+
+  padding: 0;
+}
+
+input[type='text'].error {
+  background-color: rgb(224, 62, 62);
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: #212121af;
+
+  z-index: 2;
+}
+
+#overlay.visible {
+  display: block;
+}
+
+#toolbar {
+  position: fixed;
+
+  background-color: #111111;
+  border-radius: 8px;
+  
+  bottom: 16px;
+
+  padding: 16px;
+
+  z-index: 1;
+}
+
+button.indent {
+  background-color: #0000009f;
+  border: none;
+  border-radius: 4px;
+  display: inline-flex;
+
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+}
+
+button.indent img {
+  padding: 8px;
+  width: 4vmin;
+  height: 4vmin;
+}
+
+button.indent:hover {
+  cursor: pointer;
+  background-color: #000000c4;
+}
+
+button.indent:active {
+  cursor: pointer;
+  background-color: #12a8b3c4;
+}
+
+#toolbar button.indent {
+  width: calc(4vmin + 16px);
+  height: calc(4vmin + 16px);
+}
+
+.pointDialog {
+  position: absolute;
+  display: block;
+
+  background-color: white;
+  border-radius: 4px;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pointDialog .headbar {
+  position: relative;
+  display: block;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+
+  margin: 0;
+  padding: 4px 4px 12px;
+
+  background-color: deeppink;
+}
+
+.pointDialog .headbar h2 {
+  display: inline;
+  color: white;
+}
+
+
+.pointDialog .headbar button.indent {
+  float: right;
+  
+  text-align: center;
+  background-color: #0000004f;
+}
+
+.pointDialog .headbar button.indent img {
+  width: 2.4vmin;
+  height: 2.4vmin;
+  padding: 2px;
+}
+
+.pointDialog .headbar button.indent:active {
+  background-color: #12a8b3c4;
+}
+
+.pointDialog .body {
+  margin: 16px;
+}
+
+.pointDialog .body label {
+  font-size: 2vmin;
+}
+
+.pointDialog .body input {
+  font-size: 2vmin;
+  color: white;
+
+  padding: 0 4px;
+
+  margin: 4px;
+}
+
+.pointDialog .body button {
+  display: block;
+
+  margin: 16px 0px;
+  float: right;
+
+  font-size: 2vmin;
+}
